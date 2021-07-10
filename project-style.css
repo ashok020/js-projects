@@ -1,0 +1,376 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: bisque;
+  font-family: "Ubuntu", "Roboto", sans-serif;
+  font-size: calc(0.75em + 1vmin);
+}
+
+.container {
+  padding: 5vh 5vw;
+}
+.project {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 25px;
+}
+
+/* Clock Analog */
+.container-clock-ag {
+  padding: 0;
+}
+.clock-ag {
+  width: 40vh;
+  height: 40vh;
+  min-width: 280px;
+  min-height: 280px;
+  border: 25px solid #000;
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  position: relative;
+}
+.center-pin {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 50%;
+  margin: auto;
+  z-index: 500;
+}
+.indicators {
+  color: #000;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+}
+.clock-hr,
+.clock-min,
+.clock-sec {
+  --rotation: 0;
+  /* border-radius: 50%; */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  transform: rotate(calc(var(--rotation) * 1deg));
+  transition: all 1s linear;
+}
+
+.clock-hr {
+  --rotation: 0;
+}
+
+.clock-min {
+  --rotation: 0;
+}
+.clock-sec {
+  --rotation: 70;
+}
+
+.hr,
+.min,
+.sec {
+  border-radius: 10px;
+  margin: auto;
+  background-color: #000;
+  box-shadow: rgba(0, 0, 0, 0.8) 1px 2px 5px;
+}
+.hr {
+  margin-top: 25%;
+  width: 8px;
+  height: 25%;
+}
+.min {
+  margin-top: 15%;
+  width: 5px;
+  height: 35%;
+}
+.sec {
+  margin-top: 10%;
+  width: 2px;
+  height: 40%;
+  background-color: red;
+  box-shadow: rgba(255, 0, 0, 0.8) 1px 2px 5px;
+}
+
+.indicator {
+  position: inherit;
+  width: 3px;
+  height: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: none;
+  background-color: #000;
+  box-shadow: rgba(0, 0, 0, 0.8) 1px 2px 5px;
+  left: 50%;
+}
+
+.indicators {
+  --rot: 0;
+  transform: rotate(calc(var(--rot) * 1deg));
+}
+#indi1 {
+  --rot: 30;
+}
+#indi2 {
+  --rot: 60;
+}
+#indi3 {
+  --rot: 90;
+}
+#indi4 {
+  --rot: 120;
+}
+#indi5 {
+  --rot: 150;
+}
+#indi6 {
+  --rot: 180;
+}
+#indi7 {
+  --rot: 210;
+}
+#indi8 {
+  --rot: 240;
+}
+#indi9 {
+  --rot: 270;
+}
+#indi10 {
+  --rot: 300;
+}
+#indi11 {
+  --rot: 330;
+}
+
+.num {
+  color: white;
+  font-family: "Otomanopee One", sans-serif;
+  opacity: 0.8;
+}
+
+#indi0 .num {
+  transform: rotate(calc((var(--rot)) * -1deg)) translate(-0.45rem, -1.7rem);
+}
+
+#indi3 .num {
+  transform: rotate(calc(var(--rot) * -1deg)) translate(1.4rem, -0.1rem);
+}
+
+#indi6 .num {
+  transform: rotate(calc(var(--rot) * -1deg)) translate(-0.3rem, 1.7rem);
+}
+
+#indi9 .num {
+  transform: rotate(calc(var(--rot) * -1deg)) translate(-1.9rem, -0.1rem);
+}
+
+/* clock digital */
+
+.clock {
+  background-color: #00003f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.date,
+.time,
+.day {
+  font-size: 2rem;
+  font-family: "Otomanopee One", sans-serif;
+}
+
+/* Stopwatch  */
+.stopwatch {
+  background-color: coral;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.timer {
+  font-size: 2.4rem;
+  font-family: "Otomanopee One", sans-serif;
+}
+
+.stopwatch-btns {
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+}
+.btn {
+  color: #fff;
+  padding: 2% 4%;
+  border: 1px solid #fff;
+  border-radius: 10%;
+  transition: all 0.2s ease-in-out;
+}
+.btn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: coral;
+}
+
+.calculator {
+  background: cyan;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cal-box {
+  padding: 2vh 2vw;
+  width: 400px;
+  height: 600px;
+  display: grid;
+  grid-template-areas:
+    "o o o o"
+    "c  c  b  div"
+    "b1 b2 b3 mul"
+    "b4 b5 b6 min"
+    "b7 b8 b9 plus"
+    "dot b0 eq eq";
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+#result {
+  background-color: aliceblue;
+  border-radius: 5px;
+  display: flex;
+  align-items: stretch;
+}
+
+.output input {
+  background-color: transparent;
+  width: 100%;
+  font-size: 2rem;
+  color: #252626;
+  outline: none;
+  border: none;
+  padding: 3% 6.8%;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2),
+    0px -5px 10px rgba(255, 255, 255, 0.15);
+  font-family: "Otomanopee One", sans-serif;
+  text-align: end;
+  caret-color: transparent;
+}
+.output input:focus {
+  outline: none;
+  background-color: transparent;
+}
+
+.cb {
+  background-color: aliceblue;
+  display: flex;
+  color: #252626;
+  font-size: 1.4em;
+  font-weight: 400;
+
+  color: rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2),
+    0px -5px 10px rgba(255, 255, 255, 0.15);
+
+  box-shadow: 0 4px rgba(153, 153, 153, 0.507);
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.cb:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px rgba(153, 153, 153, 0.507);
+}
+.cb:active,
+#pressed {
+  transform: translateY(2px);
+  box-shadow: 0 2px rgba(102, 102, 102, 0.486);
+}
+
+.cb i {
+  font-weight: 100;
+  font-size: 0.9em;
+  color: #252626;
+  color: rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2),
+    0px -5px 10px rgba(255, 255, 255, 0.15);
+}
+.output {
+  grid-area: o;
+}
+.cb-back {
+  grid-area: b;
+}
+.cb-clear {
+  grid-area: c;
+  background-color: #f44b37;
+  color: white;
+}
+.cb-div {
+  grid-area: div;
+}
+.cb-mul {
+  grid-area: mul;
+}
+.cb-min {
+  grid-area: min;
+}
+.cb-plus {
+  grid-area: plus;
+}
+.cb-equal {
+  grid-area: eq;
+  background-color: #f44b37;
+  color: white;
+}
+.cb-dot {
+  grid-area: dot;
+}
+.cb-0 {
+  grid-area: b0;
+}
+.cb-1 {
+  grid-area: b1;
+}
+.cb-2 {
+  grid-area: b2;
+}
+.cb-3 {
+  grid-area: b3;
+}
+.cb-4 {
+  grid-area: b4;
+}
+.cb-5 {
+  grid-area: b5;
+}
+.cb-6 {
+  grid-area: b6;
+}
+.cb-7 {
+  grid-area: b7;
+}
+.cb-8 {
+  grid-area: b8;
+}
+.cb-9 {
+  grid-area: b9;
+}
