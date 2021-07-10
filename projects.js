@@ -257,8 +257,13 @@ document.addEventListener("keyup", function (e) {
   remove(e.key);
 });
 
+function vibrate(ms) {
+  navigator.vibrate(ms);
+}
+
 function clickFn(k) {
-  navigator.vibrate(10);
+  vibrate(4);
+
   result.style.backgroundColor = "aliceblue";
   if (ioString == "Error" || ioString == "NaN" || ioString == "Infinity") {
     ioString = "";
