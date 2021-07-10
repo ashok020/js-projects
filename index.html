@@ -1,0 +1,165 @@
+i<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="project-style.css" />
+    <title>Javascript Projects</title>
+  </head>
+
+  <body>
+    <div class="bg">
+      <div class="container">
+        <div class="row justify-content-around g-4" style="margin-bottom: 20px">
+          <div class="col-lg-4 col-md-8 col-12">
+            <div class="project container-clock-ag">
+              <div class="clock-ag">
+                <div class="center-pin"></div>
+                <div class="clock-hr" data-hour-hand>
+                  <div class="hr"></div>
+                </div>
+                <div class="clock-min" data-minute-hand>
+                  <div class="min"></div>
+                </div>
+                <div class="clock-sec" data-second-hand>
+                  <div class="sec"></div>
+                </div>
+
+                <div class="indicators" id="indi0">
+                  <div class="indicator">
+                    <div class="num">12</div>
+                  </div>
+                </div>
+                <div class="indicators" id="indi1">
+                  <div class="indicator"></div>
+                </div>
+                <div class="indicators" id="indi2">
+                  <div class="indicator"></div>
+                </div>
+                <div class="indicators" id="indi3">
+                  <div class="indicator">
+                    <div class="num">3</div>
+                  </div>
+                </div>
+                <div class="indicators" id="indi4">
+                  <div class="indicator"></div>
+                </div>
+                <div class="indicators" id="indi5">
+                  <div class="indicator"></div>
+                </div>
+                <div class="indicators" id="indi6">
+                  <div class="indicator">
+                    <div class="num">6</div>
+                  </div>
+                </div>
+                <div class="indicators" id="indi7">
+                  <div class="indicator"></div>
+                </div>
+                <div class="indicators" id="indi8">
+                  <div class="indicator"></div>
+                </div>
+                <div class="indicators" id="indi9">
+                  <div class="indicator">
+                    <div class="num">9</div>
+                  </div>
+                </div>
+                <div class="indicators" id="indi10">
+                  <div class="indicator"></div>
+                </div>
+                <div class="indicators" id="indi11">
+                  <div class="indicator"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12 col-offset-6">
+            <div class="project clock">
+              <h1>Clock</h1>
+              <div class="date" id="date">01 Jan 2021</div>
+              <div class="day" id="day">Sunday</div>
+              <div class="time" id="time">00:00 AM</div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12 col-offset-2">
+            <div class="project stopwatch">
+              <h1>Stopwatch</h1>
+              <div class="timer" id="timer">00:00</div>
+              <div class="stopwatch-btns">
+                <div id="start" class="btn">Start</div>
+                <div id="stop" class="btn">Stop</div>
+                <div id="reset" class="btn">Reset</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-8">
+            <div class="project calculator">
+              <div class="cal-box">
+                <div class="output" id="result">
+                  <input
+                    type="text"
+                    class="input-output"
+                    value="0"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="cb cb-back" onclick="clickFn('b')">
+                  <i class="fas fa-backspace"></i>
+                </div>
+                <div class="cb cb-clear" onclick="clickFn('c')">C</div>
+
+                <div class="cb cb-div" onclick="clickFn('/')">
+                  <i class="fas fa-divide"></i>
+                </div>
+                <div class="cb cb-mul" onclick="clickFn('*')">
+                  <i class="fas fa-times"></i>
+                </div>
+
+                <div class="cb cb-min" onclick="clickFn('-')">
+                  <i class="fas fa-minus"></i>
+                </div>
+                <div class="cb cb-plus" onclick="clickFn('+')">
+                  <i class="fas fa-plus"></i>
+                </div>
+                <div class="cb cb-equal" onclick="clickFn('=')">
+                  <i class="fas fa-equals" style="color: white"></i>
+                </div>
+                <div class="cb cb-dot" onclick="clickFn('.')">.</div>
+                <div class="cb cb-0" onclick="clickFn('0')">0</div>
+                <div class="cb cb-1" onclick="clickFn('1')">1</div>
+                <div class="cb cb-2" onclick="clickFn('2')">2</div>
+                <div class="cb cb-3" onclick="clickFn('3')">3</div>
+                <div class="cb cb-4" onclick="clickFn('4')">4</div>
+                <div class="cb cb-5" onclick="clickFn('5')">5</div>
+                <div class="cb cb-6" onclick="clickFn('6')">6</div>
+                <div class="cb cb-7" onclick="clickFn('7')">7</div>
+                <div class="cb cb-8" onclick="clickFn('8')">8</div>
+                <div class="cb cb-9" onclick="clickFn('9')">9</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="projects.js"></script>
+  </body>
+</html>
