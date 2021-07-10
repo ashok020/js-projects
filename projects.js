@@ -258,6 +258,7 @@ document.addEventListener("keyup", function (e) {
 });
 
 function clickFn(k) {
+  navigator.vibrate(100);
   result.style.backgroundColor = "aliceblue";
   if (ioString == "Error" || ioString == "NaN" || ioString == "Infinity") {
     ioString = "";
