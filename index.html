@@ -21,11 +21,29 @@ i<!DOCTYPE html>
   </head>
 
   <body>
+    <header>
+      <nav>
+          <div class="logo">
+              <span>JS</span> Projects
+          </div>
+          <div class="projects-nav">
+              <a href="#clock" class="project-name">Clock</a>
+              <a href="#stopwatch" class="project-name">Stopwatch</a>
+              <a href="#calculator" class="project-name">Calculator</a>
+          </div>
+          <div class="ham-burger">
+              <div class="line" id="line-1"></div>
+              <div class="line" id="line-2"></div>
+              <div class="line" id="line-3"></div>
+          </div>
+      </nav>
+  </header>
+
     <div class="bg">
       <div class="container">
         <div class="row justify-content-around g-4" style="margin-bottom: 20px">
           <div class="col-lg-4 col-md-8 col-12">
-            <div class="project container-clock-ag">
+            <div class="project container-clock-ag" id="clock">
               <div class="clock-ag">
                 <div class="center-pin"></div>
                 <div class="clock-hr" data-hour-hand>
@@ -86,7 +104,7 @@ i<!DOCTYPE html>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 col-12 col-offset-6">
-            <div class="project clock">
+            <div class="project clock" id="stopwatch">
               <h1>Clock</h1>
               <div class="date" id="date">01 Jan 2021</div>
               <div class="day" id="day">Sunday</div>
@@ -107,7 +125,7 @@ i<!DOCTYPE html>
         </div>
         <div class="row justify-content-center">
           <div class="col-lg-6 col-md-8">
-            <div class="project calculator">
+            <div class="project calculator" id="calculator">
               <div class="cal-box">
                 <div class="output" id="result">
                   <input

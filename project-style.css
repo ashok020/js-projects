@@ -1,16 +1,178 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;400;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,500;1,700&display=swap');
+:root
+{
+    --nav-bg : #2e294e;
+    --nav-light : #413a6d;
+    --nav-text : #EADEDA;
+    --JS : #ffd400; 
+
+    --duration : 0.4s
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+html
+{
+  scroll-behavior: smooth;
+}
 body {
   background-color: bisque;
+  min-height: 100vh;
   font-family: "Ubuntu", "Roboto", sans-serif;
   font-size: calc(0.75em + 1vmin);
 }
+
+
+
+header
+{
+  margin-bottom: 50px;
+}
+
+nav
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 8vh;
+    padding: 1vh 1vw;
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav a
+{
+    text-decoration: none;
+    color: var(--nav-text);
+}
+nav .logo
+{
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+}
+nav .logo span
+{
+    padding: 0.5rem;
+    color: var(--JS);
+    background-color: var(--nav-light);
+    font-style: italic;
+    border-radius: 10px;
+}
+
+nav .projects-nav
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .projects-nav .project-name
+{
+    margin: 0 1rem;
+    padding: 0.5rem 0.5rem;
+    border-radius: 10px;
+    transition: all var(--duration) ease-in-out;
+}
+
+nav .projects-nav .project-name:hover
+{
+    background-color: var(--nav-text);
+    color: var(--nav-bg);
+}
+
+nav .ham-burger
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1rem;
+    padding: 0.2rem;
+    display: none;
+}
+
+nav .ham-burger:hover
+{
+    cursor: pointer;
+}
+nav .ham-burger .line
+{
+    background-color: var(--nav-text);
+    width: 20px;
+    height: 3px;
+    border-radius: 5px;
+    margin: 3px 0;
+    transition: transform var(--duration) ease-in-out , opacity calc(var(--duration) + 0.1s) ease-in-out;
+}
+nav .ham-burger .active-1
+{
+    transform: rotate(-45deg) translateX(-8px);
+}
+
+nav .ham-burger .active-2
+{
+    transform: translateX(-0.8rem);
+    opacity: 0;
+}
+
+nav .ham-burger .active-3
+{
+    transform: rotate(45deg) translateX(-8px);
+}
+
+
+@media (max-width:768px) {
+
+
+    nav .ham-burger
+    {
+        display: block;
+    }
+    body
+    {
+        position: relative;
+        z-index: -2;
+    }
+    nav .projects-nav
+    {
+        position: absolute;
+        z-index: -1;
+        top: 6vh;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--nav-bg);
+        padding-bottom: 1vh;
+        transition: transform var(--duration) ease-in-out;
+        transform: translateY(-17vh);
+    }
+    nav .projects-nav .project-name
+    {
+        padding: 1vh 10vw;
+        margin: 0.5vh 0;
+        transition: opacity,transform 0.5s ease-in-out;
+        opacity: 1;
+        transform: translateY(-5vh);
+    }
+
+}
+
+
+
+
 
 .container {
   padding: 5vh 5vw;
@@ -44,7 +206,7 @@ body {
   border: 2px solid #000;
   border-radius: 50%;
   margin: auto;
-  z-index: 500;
+  z-index: 4;
 }
 .indicators {
   color: #000;

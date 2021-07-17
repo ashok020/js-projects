@@ -3,6 +3,58 @@ const startBtn = document.getElementById("start");
 const stopBtn = document.getElementById("stop");
 const resetBtn = document.getElementById("reset");
 
+
+
+
+
+const menu_btn = document.querySelector('.ham-burger');
+const line_1 = document.querySelector('#line-1');
+const line_2 = document.querySelector('#line-2');
+const line_3 = document.querySelector('#line-3');
+const projects = document.querySelector('.projects-nav');
+const p = document.querySelectorAll('.project-name');
+
+
+menu_btn.addEventListener('click', menuToggle);
+
+function menuToggle()
+{
+    line_1.classList.toggle('active-1');
+    line_2.classList.toggle('active-2');
+    line_3.classList.toggle('active-3');
+    console.log(clock.style.opacity);
+    if(projects.style.transform == "translateY(-17vh)" || projects.style.transform == "")
+    {
+        projects.style.transform = "translateY(0)";
+        p.forEach(pp =>
+            {
+                pp.style.transform = 'translateY(0)';
+                pp.style.opacity = '1';
+            }
+
+        );
+      
+        
+    }
+    else
+    {
+         projects.style.transform = "translateY(-17vh)";
+         p.forEach(pp =>
+            {
+                pp.style.transform = '';
+                pp.style.opacity = '0';
+            }
+
+        );
+    }
+    
+}
+
+
+
+
+
+
 let minutesCounter = 0;
 let secondsCounter = 0;
 
